@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>唯品会放大镜 | T7tseven&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="t7tseven,t7tseven's Blog" />
+  
+  <meta name="description" content="JavaScript写放大镜效果项目源代码：file:///C:/Users/taojiaqi/Desktop/%E4%BB%BF%E5%94%AF%E5%93%81%E4%BC%9A%E6%94%BE%E5%A4%A7%E9%95%9C/index.html html布局 .big包含四个小盒子.big-item  .big-item中包含两个小盒子，一个装center图片，一个装big图加sc">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="唯品会放大镜">
+<meta property="og:url" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/index.html">
+<meta property="og:site_name" content="T7tseven&#39;s Blog">
+<meta property="og:description" content="JavaScript写放大镜效果项目源代码：file:///C:/Users/taojiaqi/Desktop/%E4%BB%BF%E5%94%AF%E5%93%81%E4%BC%9A%E6%94%BE%E5%A4%A7%E9%95%9C/index.html html布局 .big包含四个小盒子.big-item  .big-item中包含两个小盒子，一个装center图片，一个装big图加sc">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/1.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/2.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/3.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/4.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/5.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/6.png">
+<meta property="og:updated_time" content="2018-02-28T13:55:23.986Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="唯品会放大镜">
+<meta name="twitter:description" content="JavaScript写放大镜效果项目源代码：file:///C:/Users/taojiaqi/Desktop/%E4%BB%BF%E5%94%AF%E5%93%81%E4%BC%9A%E6%94%BE%E5%A4%A7%E9%95%9C/index.html html布局 .big包含四个小盒子.big-item  .big-item中包含两个小盒子，一个装center图片，一个装big图加sc">
+<meta name="twitter:image" content="http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blogs/css/style.css">
+  <script src="/blogs/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blogs/" class="left">
+                    <span class="site-title">T7tseven&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/blogs/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/blogs/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/blogs/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blogs/">
+                    <img src="/blogs/images/logo1.jpeg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        T7tseven&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        记录生活点滴
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//t7tseven.github.io/blogs">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/t7tseven">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/5534020022">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-唯品会放大镜" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      唯品会放大镜
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blogs/categories/Demo练习/">Demo练习</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-02-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="JavaScript写放大镜效果"><a href="#JavaScript写放大镜效果" class="headerlink" title="JavaScript写放大镜效果"></a>JavaScript写放大镜效果</h1><p>项目源代码：file:///C:/Users/taojiaqi/Desktop/%E4%BB%BF%E5%94%AF%E5%93%81%E4%BC%9A%E6%94%BE%E5%A4%A7%E9%95%9C/index.html</p>
+<h2 id="html布局"><a href="#html布局" class="headerlink" title="html布局"></a>html布局</h2><ul>
+<li><p>.big包含四个小盒子.big-item</p>
+</li>
+<li><p>.big-item中包含两个小盒子，一个装center图片，一个装big图加screen(放大镜)</p>
+</li>
+<li><p>.small包含四个小盒子.small-item里面装做选项卡的small图</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/26/唯品会放大镜/1.png" title="html布局">
+<h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><ul>
+<li><p>.big-item全部定位在.big上</p>
+</li>
+<li><p>将放大镜screen定位在.bigMore上</p>
+</li>
+<li><p>给要放大的图片设置定位，通过改变top和left值实现图片的放大</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/26/唯品会放大镜/2.png" title="大盒子样式">
+<img src="/blogs/2018/02/26/唯品会放大镜/3.png" title="tab样式">
+<h2 id="js功能实现"><a href="#js功能实现" class="headerlink" title="js功能实现"></a>js功能实现</h2><h3 id="选择器函数封装"><a href="#选择器函数封装" class="headerlink" title="选择器函数封装"></a>选择器函数封装</h3><ul>
+<li>是TagName, Id 还是className</li>
+</ul>
+<img src="/blogs/2018/02/26/唯品会放大镜/4.png" title="选择器函数">
+<h3 id="底部tab栏切换"><a href="#底部tab栏切换" class="headerlink" title="底部tab栏切换"></a>底部tab栏切换</h3><ul>
+<li><p>给每一个smallItem绑定点击事件，让对应的图片盒子显示</p>
+<ul>
+<li><p>由于事件绑定改变了i的值，所以要将i绑定到对应smallItem的index属性上</p>
+</li>
+<li><p>或者使用闭包访问外部i值</p>
+</li>
+</ul>
+</li>
+<li><p>添加移上和离开的样式，点击取消样式</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/26/唯品会放大镜/5.png" title="tab栏切换">
+<h3 id="放大镜（magnifier）函数封装"><a href="#放大镜（magnifier）函数封装" class="headerlink" title="放大镜（magnifier）函数封装"></a>放大镜（magnifier）函数封装</h3><ul>
+<li><p>鼠标移到外部大盒子上让装大图的盒子显示出来，小盒子的样式改变</p>
+</li>
+<li><p>鼠标在装大图盒子上移动时实现放大效果</p>
+<ul>
+<li><p>获取鼠标在屏幕上的位置（pageX和pageY）</p>
+</li>
+<li><p>获取放大镜在屏幕上的位置（让鼠标在发大镜的中间位置所以要减去放大镜宽度的一半）</p>
+</li>
+<li><p>让发大镜在固定的位置内移动（装大图盒子的内部）</p>
+</li>
+<li><p>将放大镜的移动距离赋值给发大镜的top和left值</p>
+</li>
+<li><p>确定放大镜的移动距离和放大图片的移动距离的关系实现放大效果</p>
+<ul>
+<li>screen的移动距离/screen的最大移动距离 = 背景图的移动距离/背景图的最大移动距离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在点击tab栏时让每一个背景都可以放大，将当前tab的index值当做参数传给magnifier函数，要让刚开始打开页面时的盒子有放大效果，要给magnifier函数传入参数0，在外部调用</p>
+</li>
+<li><p>鼠标离开外部大盒子时让装大图的盒子隐藏</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/26/唯品会放大镜/6.png" title="放大镜">
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年02月28日 21:55</p>
+        <p>原始链接： <a class="post-url" href="/blogs/2018/02/26/唯品会放大镜/" title="唯品会放大镜">http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/</a></p>
+        <footer>
+            <a href="http://t7tseven.github.io/blogs">
+                <img src="/blogs/images/logo1.jpeg" alt="Jiaqi Tao">
+                Jiaqi Tao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blogs/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blogs/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blogs/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blogs/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blogs/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/&title=《唯品会放大镜》 — T7tseven's Blog&pic=img/w.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/&title=《唯品会放大镜》 — T7tseven's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《唯品会放大镜》 — T7tseven's Blog&url=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/&via=http://t7tseven.github.io/blogs" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://t7tseven.github.io/blogs/2018/02/26/唯品会放大镜/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blogs/tags/JavaScript/" class="color1">JavaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript写放大镜效果"><span class="post-toc-text">JavaScript写放大镜效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html布局"><span class="post-toc-text">html布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css样式"><span class="post-toc-text">css样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js功能实现"><span class="post-toc-text">js功能实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择器函数封装"><span class="post-toc-text">选择器函数封装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#底部tab栏切换"><span class="post-toc-text">底部tab栏切换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#放大镜（magnifier）函数封装"><span class="post-toc-text">放大镜（magnifier）函数封装</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/blogs/2018/02/28/JavaScript实现无缝轮播/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JavaScript实现无缝轮播
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://t7tseven.github.io/blogs",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blogs/categories/Demo练习/">Demo练习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blogs/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/blogs/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/blogs/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/blogs/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blogs/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blogs/js/search.js"></script>
+<script src="/blogs/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blogs/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blogs/js/animate.js"></script>
+
+
+  <script src="/blogs/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

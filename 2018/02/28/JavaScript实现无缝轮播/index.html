@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript实现无缝轮播 | T7tseven&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="t7tseven,t7tseven's Blog" />
+  
+  <meta name="description" content="JavaScript写轮播图效果项目源代码：http://localhost:4000/blogs/2018/02/28/JavaScript%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/#more html布局  ul#banner在.screen中改变left值实现轮播  ul#pointer中的指示点根据轮播图片的数量通过js自">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript实现无缝轮播">
+<meta property="og:url" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/index.html">
+<meta property="og:site_name" content="T7tseven&#39;s Blog">
+<meta property="og:description" content="JavaScript写轮播图效果项目源代码：http://localhost:4000/blogs/2018/02/28/JavaScript%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/#more html布局  ul#banner在.screen中改变left值实现轮播  ul#pointer中的指示点根据轮播图片的数量通过js自">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/1.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/2.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/6.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/5.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/7.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/8.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/9.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/10.png">
+<meta property="og:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/11.png">
+<meta property="og:updated_time" content="2018-02-28T11:36:01.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript实现无缝轮播">
+<meta name="twitter:description" content="JavaScript写轮播图效果项目源代码：http://localhost:4000/blogs/2018/02/28/JavaScript%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/#more html布局  ul#banner在.screen中改变left值实现轮播  ul#pointer中的指示点根据轮播图片的数量通过js自">
+<meta name="twitter:image" content="http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blogs/css/style.css">
+  <script src="/blogs/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blogs/" class="left">
+                    <span class="site-title">T7tseven&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/blogs/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/blogs/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/blogs/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blogs/">
+                    <img src="/blogs/images/logo1.jpeg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        T7tseven&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        记录生活点滴
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//t7tseven.github.io/blogs">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/t7tseven">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/5534020022">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JavaScript实现无缝轮播" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript实现无缝轮播
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blogs/categories/Demo练习/">Demo练习</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-02-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="JavaScript写轮播图效果"><a href="#JavaScript写轮播图效果" class="headerlink" title="JavaScript写轮播图效果"></a>JavaScript写轮播图效果</h1><p>项目源代码：<a href="http://localhost:4000/blogs/2018/02/28/JavaScript%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/#more" target="_blank" rel="noopener">http://localhost:4000/blogs/2018/02/28/JavaScript%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/#more</a></p>
+<h2 id="html布局"><a href="#html布局" class="headerlink" title="html布局"></a>html布局</h2><img src="/blogs/2018/02/28/JavaScript实现无缝轮播/1.png" title="html布局">
+<ul>
+<li><p>ul#banner在.screen中改变left值实现轮播</p>
+</li>
+<li><p>ul#pointer中的指示点根据轮播图片的数量通过js自动创建</p>
+</li>
+<li><p>布局当中有些标签是不必要的，为了布局标准化而添加</p>
+</li>
+</ul>
+<h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><img src="/blogs/2018/02/28/JavaScript实现无缝轮播/2.png" title="主视图样式">
+<h2 id="js功能实现"><a href="#js功能实现" class="headerlink" title="js功能实现"></a>js功能实现</h2><h3 id="指示点"><a href="#指示点" class="headerlink" title="指示点"></a>指示点</h3><ul>
+<li><p>动态创建指示点</p>
+</li>
+<li><p>给第一个点添加on类，改变样式</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/6.png" title="指示点">
+<h3 id="无缝的实现"><a href="#无缝的实现" class="headerlink" title="无缝的实现"></a>无缝的实现</h3><ul>
+<li><p>由于实现的是无缝轮播，要在前后添加第一张和最后一张图片</p>
+</li>
+<li><p>将ul#banner的初始位置定位到第一张图片</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/5.png" title="克隆图片，定位">
+<h3 id="左右箭头功能"><a href="#左右箭头功能" class="headerlink" title="左右箭头功能"></a>左右箭头功能</h3><ul>
+<li><p>创建全局变量k,确定轮播位置</p>
+</li>
+<li><p>防止快速点击出现空白</p>
+</li>
+<li><p>封装运动函数，实现轮播动画</p>
+</li>
+<li><p>在回调函数中判断是否是第一张或是最后一张图片，如果是则快速定位到正确位置，实现无缝轮播</p>
+</li>
+<li><p>清除指示点样式函数clear</p>
+</li>
+<li><p>给当前指示点添加on类改变样式</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/7.png" title="箭头切换">
+<h3 id="运动函数（move）的封装-amp-amp-样式获取（getStyle）的封装"><a href="#运动函数（move）的封装-amp-amp-样式获取（getStyle）的封装" class="headerlink" title="运动函数（move）的封装&amp;&amp;样式获取（getStyle）的封装"></a>运动函数（move）的封装&amp;&amp;样式获取（getStyle）的封装</h3><ul>
+<li><p>防止定时器之间相互影响，先将定时器清除</p>
+</li>
+<li><p>根据当前距离与目标距离的关系判断速度的正负</p>
+</li>
+<li><p>根据距离与速度的关系，判断是否到达目标距离</p>
+<ul>
+<li><p>当目标距离小于当前距离时速度小于0，才能不断到达目标点</p>
+</li>
+<li><p>当目标距离大于当前距离时速度大于0，才能不断到达目标点</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>当目标距离与当前距离相等时，清除定时器</p>
+</li>
+<li><p>样式获取方式有三种: style,currentStyle,getComputedStyle</p>
+<ul>
+<li><p>style获取行间样式，且能设置样式</p>
+</li>
+<li><p>getComputedStyle 和 currentStyle 能够获取 行间样式/非行间样式/浏览器默认样式，但存在浏览器兼容问题，且不能设置样式</p>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/8.png" title="函数封装">
+<h3 id="点击指示点显示对应图片"><a href="#点击指示点显示对应图片" class="headerlink" title="点击指示点显示对应图片"></a>点击指示点显示对应图片</h3><ul>
+<li><p>将指示点下标绑定到对应的index属性上，也可以使用闭包调用i</p>
+</li>
+<li><p>将index的值和全局变量k联系到一起</p>
+</li>
+<li><p>在调用move函数时this指向改变，可以在函数外通过变量赋值的方式存储this,也可以通过箭头函数保持this指向与外部this指向一直</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/9.png" title="指示相应图片">
+<h3 id="加定时器实现自动轮播"><a href="#加定时器实现自动轮播" class="headerlink" title="加定时器实现自动轮播"></a>加定时器实现自动轮播</h3><ul>
+<li><p>解决浏览器缩小后出现空白的问题</p>
+</li>
+<li><p>封装自动轮播autoPlay函数</p>
+</li>
+</ul>
+<img src="/blogs/2018/02/28/JavaScript实现无缝轮播/10.png" title="自动轮播">
+<h3 id="当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏"><a href="#当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏" class="headerlink" title="当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏"></a>当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏</h3><img src="/blogs/2018/02/28/JavaScript实现无缝轮播/11.png" title="计时器">
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年02月28日 19:36</p>
+        <p>原始链接： <a class="post-url" href="/blogs/2018/02/28/JavaScript实现无缝轮播/" title="JavaScript实现无缝轮播">http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/</a></p>
+        <footer>
+            <a href="http://t7tseven.github.io/blogs">
+                <img src="/blogs/images/logo1.jpeg" alt="Jiaqi Tao">
+                Jiaqi Tao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blogs/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blogs/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blogs/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blogs/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blogs/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/&title=《JavaScript实现无缝轮播》 — T7tseven's Blog&pic=img/dog3.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/&title=《JavaScript实现无缝轮播》 — T7tseven's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript实现无缝轮播》 — T7tseven's Blog&url=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/&via=http://t7tseven.github.io/blogs" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://t7tseven.github.io/blogs/2018/02/28/JavaScript实现无缝轮播/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blogs/tags/JavaScript/" class="color1">JavaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript写轮播图效果"><span class="post-toc-text">JavaScript写轮播图效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html布局"><span class="post-toc-text">html布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css样式"><span class="post-toc-text">css样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js功能实现"><span class="post-toc-text">js功能实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#指示点"><span class="post-toc-text">指示点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无缝的实现"><span class="post-toc-text">无缝的实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#左右箭头功能"><span class="post-toc-text">左右箭头功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运动函数（move）的封装-amp-amp-样式获取（getStyle）的封装"><span class="post-toc-text">运动函数（move）的封装&amp;&amp;样式获取（getStyle）的封装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#点击指示点显示对应图片"><span class="post-toc-text">点击指示点显示对应图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加定时器实现自动轮播"><span class="post-toc-text">加定时器实现自动轮播</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏"><span class="post-toc-text">当鼠标移上screen定时器停止，arrow显示，离开继续开始，隐藏</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/blogs/2018/02/26/唯品会放大镜/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">唯品会放大镜</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://t7tseven.github.io/blogs",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blogs/categories/Demo练习/">Demo练习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blogs/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/blogs/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/blogs/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/blogs/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blogs/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blogs/js/search.js"></script>
+<script src="/blogs/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blogs/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blogs/js/animate.js"></script>
+
+
+  <script src="/blogs/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
